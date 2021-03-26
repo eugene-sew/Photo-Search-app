@@ -16,6 +16,8 @@
     <title>Insta PhotoSearch</title>
   </head>
   <body>
+
+    
     <div class="major">
       <div class="head">
         <img src="./image/logo1.png" alt="logo" />
@@ -26,7 +28,12 @@
 
       <div class="main">
         <form id="myForm">
-          <input type="text" class="inputbox" id="search" />
+          <input
+            type="text"
+            class="inputbox"
+            id="search"
+            placeholder="Search for photo here"
+          />
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -41,6 +48,14 @@
     <script src="./js/fontawesome.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+      }
+      window.addEventListener("load", addDarkmodeWidget);
+    </script>
 
     <script>
       $("#myForm").submit(function (event) {
