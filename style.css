@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* styling for head */
+.head {
+  text-align: center;
+  color: rgb(49, 49, 49);
+}
+
+.head > img {
+  width: 200px;
+  height: 200px;
+  justify-content: start;
+}
+
+.head > h1 {
+  font-size: 50px;
+}
+
+.head > h3 {
+  font-style: italic;
+}
+
+/* styling for main */
+.main {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main > form {
+  width: 100%;
+}
+
+form > input {
+  width: 60%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 2px solid rgb(65, 65, 65);
+  background-color: rgb(240, 240, 240);
+  font-size: 20px;
+  padding: 10px;
+}
+
+form > button {
+  width: 60px;
+  height: 35px;
+  border: none;
+  background-color: rgb(87, 230, 127);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* styling for result */
+
+.result {
+  padding: 30px;
+}
+
+.result > img {
+  max-width: 400px;
+  min-width: 200px;
+  max-height: 500px;
+  min-height: 300px;
+}
+
+.result > img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.7s;
+}

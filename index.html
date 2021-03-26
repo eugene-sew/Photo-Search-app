@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A photo search web application based off the unsplash api. Developed by Eugene Sewor(Eugene.Dev)"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.css" />
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <title>Insta PhotoSearch</title>
+  </head>
+  <body>
+    <div class="major">
+      <div class="head">
+        <img src="./image/logo1.png" alt="logo" />
+        <h1>Insta PhotoSearch</h1>
+        <br />
+        <h3>by Eugene.Dev</h3>
+      </div>
+
+      <div class="main">
+        <form id="myForm">
+          <input type="text" class="inputbox" id="search" />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <center>
+      <div class="result" id="result"></div>
+    </center>
+    <script src="./js/all.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/fontawesome.js"></script>
+    <script src="./js/fontawesome.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $("#myForm").submit(function (event) {
+        event.preventDefault();
+        $("#result").empty();
+        var search = $("#search").val();
+        var url =
+          "https://api.unsplash.com/search/photos?page=1&query=" +
+          search +
+          "&client_id=TeEq2CDjXkTU6wHrZOD4SxD_sbqpnSoRlX1IZjGbPp0&per_page=30";
+
+        $.ajax({
+          method: "GET",
+          url: url,
+          success: function (data) {
+            console.log(data);
+            data.results.forEach((photo) => {
+              $("#result").append(`
+                <img src="${photo.urls.regular}" alt="${photo.alt_description}"/>
+
+                 `);
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
